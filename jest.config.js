@@ -7,5 +7,8 @@ module.exports = {
     '<rootDir>/src/**/*.{ts,tsx}'
   ],
   coverageDirectory: 'coverage',
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1'
+  }
 }
