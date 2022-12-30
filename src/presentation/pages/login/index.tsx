@@ -1,4 +1,5 @@
-import { Logo } from '@/presentation/components/logo'
+import { Footer } from '@/presentation/components/footer'
+import { LoginHeader } from '@/presentation/components/login-header'
 import { Spinner } from '@/presentation/components/spinner'
 import React from 'react'
 import styles from './styles.scss'
@@ -6,10 +7,7 @@ import styles from './styles.scss'
 export function Login (): JSX.Element {
   return (
     <div className={styles.login}>
-      <header className={styles.header}>
-        <Logo />
-        <h1>4Dev - Enquetes para Programadores</h1>
-      </header>
+      <LoginHeader />
       <form className={styles.form}>
         <h2>Login</h2>
         <div className={styles.inputWrap}>
@@ -28,7 +26,7 @@ export function Login (): JSX.Element {
           <span className={styles.error}>Erro</span>
         </div>
       </form>
-      <footer className={styles.footer} />
+      <Footer />
     </div>
   )
 }
