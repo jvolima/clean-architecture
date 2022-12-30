@@ -27,3 +27,7 @@
     - Classes que geram instâncias de outras classes.
     - Composition Root: ponto de entrada da aplicação.
     - Responsável por montar o “quebra-cabeça” por meio da injeção de dependência.
+
+## Benefícios de configurar o react na "mão"
+- Desacoplar de qualquer script que gere um projeto React, como CRA e Vite.
+- Configurar de maneira adequada para seu projeto o webpack, tsconfig, jest, etc.
