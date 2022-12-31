@@ -1,7 +1,4 @@
-import { Footer } from '@/presentation/components/footer'
-import { FormStatus } from '@/presentation/components/form-status'
-import { Input } from '@/presentation/components/input'
-import { LoginHeader } from '@/presentation/components/login-header'
+import { Footer, FormStatus, Input, LoginHeader } from '@/presentation/components'
 import React from 'react'
 import styles from './styles.scss'
 

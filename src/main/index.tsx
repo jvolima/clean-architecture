@@ -1,8 +1,9 @@
+import { router } from '@/presentation/components'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Login } from '@/presentation/pages/login'
+import { RouterProvider } from 'react-router-dom'
 
 ReactDOM.render(
-  <Login />,
+  <RouterProvider router={router} />,
   document.getElementById('main')
 )
