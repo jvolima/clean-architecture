@@ -1,0 +1,20 @@
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    margin-top: 48px;
+    font-size: 16px;
+  }
+
+  i {
+    opacity: 0.6;
+  }
+}
