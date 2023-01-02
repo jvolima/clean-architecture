@@ -32,7 +32,7 @@ button {
   font-size: 16px;
   border: none;
 
-  &:hover {
+  &:not(:disabled):hover {
     opacity: 0.9;
     cursor: pointer;
   }
