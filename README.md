@@ -35,3 +35,10 @@
 - Configurar de maneira adequada para seu projeto o webpack, tsconfig, jest, etc.
 
 ## TDD (Test Drive Development)
+### Spy
+- Permite verificar comportamentos internos de classes
+- Exemplo: verificar se a função dentro da classe foi chamada com os valores corretos
+
+### Stub
+- Comportamento isolado
+- Diversos comportamentos para uma mesma função
