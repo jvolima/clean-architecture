@@ -1,11 +1,13 @@
-# Clean Architecture no React
-## Como funciona?
+# Aprendizados adquiridos ao criar essa aplicação:
+
+## Clean Architecture no React
+### Como funciona?
 - Um componente no React deve apenas renderizar a interface e controlar estados.
 - Para que isso ocorra, deve-se utilizar uma arquitetura capaz de fazer com que a regra de negócio da aplicação não dependa de ninguém. 
 - Além de que a aplicação deve ser testável, escalável e desacoplada de serviços externos.
 - Com esse intuito a Clean Architecture foi criada, e basicamente ela é composta por algumas camadas que estão listadas a seguir.
 
-### Camadas:
+#### Camadas:
 - Camada Domain (regras de negócio):
     - Criação de interfaces para as regras de negócio.
     - Regra de negócio não fica acoplada a nenhum tipo de implementação.
@@ -31,3 +33,5 @@
 ## Benefícios de configurar o react na "mão"
 - Desacoplar de qualquer script que gere um projeto React, como CRA e Vite.
 - Configurar de maneira adequada para seu projeto o webpack, tsconfig, jest, etc.
+
+## TDD (Test Drive Development)

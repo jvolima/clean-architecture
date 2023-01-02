@@ -4,12 +4,12 @@ import { Spinner } from '../spinner'
 import styles from './styles.scss'
 
 export function FormStatus (): JSX.Element {
-  const { isLoading, errorMessage } = useContext(FormContext)
+  const { state: { isLoading }, errorState: { main } } = useContext(FormContext)
 
   return (
-    <div data-testid="error-wrap" className={styles.errorWrap}>
+    <div data-testid="form-status" className={styles.errorWrap}>
       { isLoading && <Spinner className={styles.spinner} /> }
-      { errorMessage && <span className={styles.error}>{errorMessage}</span> }
+      { main && <span className={styles.error}>{main}</span> }
     </div>
   )
 }
