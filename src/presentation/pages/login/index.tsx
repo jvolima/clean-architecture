@@ -12,17 +12,17 @@ export function Login ({ validation }: Props): JSX.Element {
   const [state, setState] = useState({
     isLoading: false,
     email: '',
-    emailError: 'Campo obrigatório',
+    emailError: '',
     password: '',
     passwordError: 'Campo obrigatório',
     mainError: ''
   })
 
   useEffect(() => {
-    validation.validate(
-      'email',
-      state.email
-    )
+    setState({
+      ...state,
+      emailError: validation.validate('email', state.email)
+    })
   }, [state.email])
 
   useEffect(() => {
