@@ -13,6 +13,7 @@ export function Login ({ validation }: Props): JSX.Element {
     isLoading: false,
     email: '',
     emailError: 'Campo obrigatório',
+    password: '',
     passwordError: 'Campo obrigatório',
     mainError: ''
   })
@@ -22,6 +23,12 @@ export function Login ({ validation }: Props): JSX.Element {
       email: state.email
     })
   }, [state.email])
+
+  useEffect(() => {
+    validation.validate({
+      password: state.password
+    })
+  }, [state.password])
 
   return (
     <div className={styles.login}>
