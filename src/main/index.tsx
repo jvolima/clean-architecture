@@ -1,10 +1,9 @@
-import { router } from '@/presentation/components'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { RouterProvider } from 'react-router-dom'
 import '@/presentation/styles/global.scss'
+import { Router } from '@/presentation/components'
 
 ReactDOM.render(
-  <RouterProvider router={router} />,
+  <Router />,
   document.getElementById('main')
 )

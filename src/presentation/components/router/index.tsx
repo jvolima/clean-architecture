@@ -1,14 +1,17 @@
 import React from 'react'
 import { Error, Login } from '@/presentation/pages'
-import { createBrowserRouter } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom'
 
-export const router = createBrowserRouter([
-  {
-    path: '/login',
-    element: <Login />
-  },
-  {
-    path: '*',
-    element: <Error />
-  }
-])
+const isUserAuthenticated = false
+
+export function Router (): JSX.Element {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={isUserAuthenticated ? <Error /> : <Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
