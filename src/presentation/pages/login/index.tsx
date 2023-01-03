@@ -34,7 +34,7 @@ export function Login ({ validation }: Props): JSX.Element {
           <h2>Login</h2>
           <Input type="email" name="email" placeholder="Digite seu e-mail" />
           <Input type="password" name="password" placeholder="Digite sua senha" />
-          <button data-testid="submit" disabled type="submit" className={styles.submit}>Entrar</button>
+          <button data-testid="submit" disabled={!!state.emailError || !!state.passwordError} type="submit" className={styles.submit}>Entrar</button>
           <span className={styles.link}>Criar conta</span>
           <FormStatus />
         </form>
