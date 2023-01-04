@@ -31,7 +31,7 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
 
-    if (state.isLoading) {
+    if (state.isLoading || state.emailError || state.passwordError) {
       return
     }
     setState({
@@ -49,7 +49,7 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
     <div className={styles.login}>
       <LoginHeader />
       <FormContext.Provider value={{ state, setState }}>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form data-testid="form" className={styles.form} onSubmit={handleSubmit}>
           <h2>Login</h2>
           <Input type="email" name="email" placeholder="Digite seu e-mail" />
           <Input type="password" name="password" placeholder="Digite sua senha" />
