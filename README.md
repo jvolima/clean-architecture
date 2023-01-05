@@ -42,3 +42,7 @@
 ### Stub
 - Comportamento isolado
 - Diversos comportamentos para uma mesma função
+
+## Design Pattern Composite
+
+## Design Patter Builder
