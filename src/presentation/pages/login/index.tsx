@@ -3,7 +3,7 @@ import { Footer, FormStatus, Input, LoginHeader } from '@/presentation/component
 import { FormContext } from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './styles.scss'
 
 type Props = {
@@ -12,6 +12,7 @@ type Props = {
 }
 
 export function Login ({ validation, authentication }: Props): JSX.Element {
+  const navigation = useNavigate()
   const [state, setState] = useState({
     isLoading: false,
     email: '',
@@ -47,6 +48,8 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
       })
 
       localStorage.setItem('accessToken', account.accessToken)
+
+      navigation('/')
     } catch (error) {
       setState({
         ...state,
