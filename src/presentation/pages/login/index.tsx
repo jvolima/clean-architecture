@@ -3,6 +3,7 @@ import { Footer, FormStatus, Input, LoginHeader } from '@/presentation/component
 import { FormContext } from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './styles.scss'
 
 type Props = {
@@ -64,7 +65,7 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
           <Input type="email" name="email" placeholder="Digite seu e-mail" />
           <Input type="password" name="password" placeholder="Digite sua senha" />
           <button data-testid="submit" disabled={!!state.emailError || !!state.passwordError} type="submit" className={styles.submit}>Entrar</button>
-          <span className={styles.link}>Criar conta</span>
+          <Link to="/signup" data-testid="signup" className={styles.link}>Criar conta</Link>
           <FormStatus />
         </form>
       </FormContext.Provider>
