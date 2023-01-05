@@ -5,6 +5,8 @@ import { cleanup, fireEvent, render, RenderResult, waitFor } from '@testing-libr
 import { Login } from '.'
 import { ValidationStub, AuthenticationSpy } from '@/presentation/test'
 import { InvalidCredentialsError } from '@/domain/errors'
+import { createMemoryHistory } from 'history'
+import { Router } from 'react-router'
 
 type SutTypes = {
   sut: RenderResult
@@ -15,11 +17,16 @@ type SutParams = {
   validationError: string
 }
 
+const history = createMemoryHistory()
 const makeSut = (params?: SutParams): SutTypes => {
   const validationStub = new ValidationStub()
   const authenticationSpy = new AuthenticationSpy()
   validationStub.errorMessage = params?.validationError
-  const sut = render(<Login validation={validationStub} authentication={authenticationSpy} />)
+  const sut = render(
+    <Router navigator={history} location={history.location}>
+      <Login validation={validationStub} authentication={authenticationSpy} />
+    </Router>
+  )
   return {
     sut,
     authenticationSpy
@@ -162,5 +169,12 @@ describe('Login component', () => {
     await waitFor(() => {
       expect(localStorage.setItem).toHaveBeenCalledWith('accessToken', authenticationSpy.account.accessToken)
     })
+  })
+
+  it('Should be able to go to signup page', () => {
+    const { sut } = makeSut()
+    const signup = sut.getByTestId('signup')
+    fireEvent.click(signup)
+    expect(history.location.pathname).toBe('/signup')
   })
 })
