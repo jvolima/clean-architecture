@@ -7,7 +7,7 @@ type SutTypes = {
 }
 
 const makeSut = (): SutTypes => {
-  const sut = new EmailValidation(faker.random.word())
+  const sut = new EmailValidation(faker.database.column())
   return {
     sut
   }
