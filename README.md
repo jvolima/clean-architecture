@@ -44,5 +44,7 @@
 - Diversos comportamentos para uma mesma função
 
 ## Design Pattern Composite
+- Utilizado para "juntar" as validações de cada campo
 
 ## Design Patter Builder
+- Utilizado para "montar" o array de validators para o composite
