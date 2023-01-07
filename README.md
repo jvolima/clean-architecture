@@ -46,5 +46,8 @@
 ## Design Pattern Composite
 - Utilizado para "juntar" as validações de cada campo
 
-## Design Patter Builder
+## Design Pattern Builder
 - Utilizado para "montar" o array de validators para o composite
+
+## Design Pattern Factory
+- Utilizado para injetar as dependências do componente
