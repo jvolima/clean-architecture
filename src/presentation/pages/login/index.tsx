@@ -7,8 +7,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './styles.scss'
 
 type Props = {
-  validation?: Validation
-  authentication?: Authentication
+  validation: Validation
+  authentication: Authentication
 }
 
 export function Login ({ validation, authentication }: Props): JSX.Element {
