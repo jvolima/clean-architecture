@@ -1,3 +1,3 @@
-export const makeApiUrl = (): string => {
-  return 'http://localhost:3333/login'
+export const makeApiUrl = (path: string): string => {
+  return `http://localhost:3333${path}`
 }
