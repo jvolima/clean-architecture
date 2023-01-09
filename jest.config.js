@@ -8,6 +8,7 @@ module.exports = {
     '!<rootDir>/src/main/**/*',
     '!<rootDir>/src/presentation/components/router/**/*',
     '!<rootDir>/src/presentation/pages/error/**/*',
+    '!<rootDir>/src/**/index.ts',
     '!**/*.d.ts'
   ],
   coverageDirectory: 'coverage',
