@@ -47,6 +47,12 @@
 - Comportamento isolado
 - Diversos comportamentos para uma mesma função
 
+### Mock
+- Somente guarda os valores para testar se estão sendo passados corretamente
+
+### Dummies
+- Quando você quer ignorar o objeto, trocar o valor dele por um objeto vazio
+
 ## Design Pattern Composite
 - Utilizado para "juntar" as validações de cada campo
 
