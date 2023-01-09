@@ -1,6 +1,6 @@
-import React, { Component, ReactNode } from 'react'
+import React from 'react'
 import { Error } from '@/presentation/pages'
-import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 type Props = {
   makeLogin: JSX.Element

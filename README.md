@@ -51,3 +51,6 @@
 
 ## Design Pattern Factory
 - Utilizado para injetar as dependências do componente
+
+## Outros aprendizados do projeto
+- npx npm-check -u -s para checar as dependências do projeto, se precisam ser atualizadas ou não
