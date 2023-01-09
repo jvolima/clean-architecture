@@ -1,3 +1,7 @@
+[![Coverage Status](https://coveralls.io/repos/github/jvolima/clean-architecture/badge.svg?branch=master)](https://coveralls.io/github/jvolima/clean-architecture?branch=master)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+
 # Aprendizados adquiridos ao criar essa aplicação:
 
 ## Clean Architecture no React
@@ -54,3 +58,4 @@
 
 ## Outros aprendizados do projeto
 - npx npm-check -u -s para checar as dependências do projeto, se precisam ser atualizadas ou não
+- Utilização do coveralls para deixar o test coverage do projeto na internet
