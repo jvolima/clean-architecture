@@ -39,19 +39,21 @@
 - Configurar de maneira adequada para seu projeto o webpack, tsconfig, jest, etc.
 
 ## TDD (Test Drive Development)
-### Spy
-- Permite verificar comportamentos internos de classes
-- Exemplo: verificar se a função dentro da classe foi chamada com os valores corretos
+### Test doubles
+#### Fakes
+Em diversos casos você vai precisar substituir uma dependência por um dublê para que ele retorne algo particular. Nesses casos entra o fake, pois a função dele é retornar algum valor fixo que não dependa de nada. Entretanto, ao utilizar o fake você fica impossibilitado de saber quantas vezes ele foi chamado, se recebeu os parâmetros corretamente, etc.
 
-### Stub
-- Comportamento isolado
-- Diversos comportamentos para uma mesma função
+#### Spy
+Diferentemente dos fakes, os spies conseguem verificar comportamentos internos das classes, possibilitando que você teste se a função enviou os parâmetros corretamente, ou quantas vezes determinada função foi chamada. Porém, os spies funcionam melhores em casos que a classe ou função possui poucos comportamentos.
 
-### Mock
-- Somente guarda os valores para testar se estão sendo passados corretamente
+#### Stub
+Os stubs basicamente atuam como spies, o diferencial deles é que possuem a capacidade de mudar o comportamento dependendo de como for chamado, pois podem possuir diversos comportamentos. 
 
-### Dummies
-- Quando você quer ignorar o objeto, trocar o valor dele por um objeto vazio
+#### Mocks
+Quando você precisa testar tanto diversos comportamentos, como as informações armazendas, o mock entra em ação. Os mocks são utilizados para substituir uma dependência a fim de verificar vários comportamentos simultaneamente,
+
+#### Dummies
+Vamos supor que a classe ou função que você esteja testando importa algo que você não queira e nem tem porque testar, como um arquivo css por exemplo, o que você faz para "ignorar" essa importação? A resposta está nos Dummies, que servem justamente para "ignorar" e trocar o valor por um objeto vazio, pois não interfere em nada no teste.
 
 ## Design Pattern Composite
 - Utilizado para "juntar" as validações de cada campo
