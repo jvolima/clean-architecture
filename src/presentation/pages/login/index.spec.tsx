@@ -53,9 +53,9 @@ const populatePasswordField = (sut: RenderResult, password = faker.internet.pass
 }
 
 const testStatusForField = (sut: RenderResult, fieldName: string, validationError?: string): void => {
-  const status = sut.getByTestId(`${fieldName}-status`)
-  expect(status.title).toBe(validationError || 'Tudo certo!')
-  expect(status.textContent).toBe(validationError ? '🔴' : '🟢')
+  const field = sut.getByTestId(`${fieldName}-status`)
+  expect(field.title).toBe(validationError || 'Tudo certo!')
+  expect(field.textContent).toBe(validationError ? '🔴' : '🟢')
 }
 
 const testFormStatusChildCount = (sut: RenderResult, count: number): void => {
