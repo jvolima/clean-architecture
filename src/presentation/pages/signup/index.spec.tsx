@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, RenderResult } from '@testing-library/react'
+import { cleanup, render, RenderResult } from '@testing-library/react'
 import { SignUp } from '.'
 import { Helper, ValidationStub } from '@/presentation/test'
 import React from 'react'
@@ -24,11 +24,6 @@ const makeSut = (params?: SutParams): SutTypes => {
   }
 }
 
-const populateField = (sut: RenderResult, fieldName: string, value = faker.random.word()): void => {
-  const input = sut.getByTestId(fieldName)
-  fireEvent.input(input, { target: { value } })
-}
-
 describe('SignUp Component', () => {
   afterEach(cleanup)
 
@@ -46,7 +41,7 @@ describe('SignUp Component', () => {
   it('Should be able to show nameError if Validation fails', () => {
     const validationError = faker.random.words()
     const { sut } = makeSut({ validationError })
-    populateField(sut, 'name')
+    Helper.populateField(sut, 'name')
     Helper.testStatusForField(sut, 'name', validationError)
   })
 })
