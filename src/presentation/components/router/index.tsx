@@ -1,5 +1,5 @@
 import React from 'react'
-import { Error } from '@/presentation/pages'
+import { Error , SignUp } from '@/presentation/pages'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 type Props = {
@@ -11,6 +11,7 @@ export function Router ({ makeLogin }: Props): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={makeLogin} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
