@@ -38,8 +38,8 @@ const makeSut = (params?: SutParams): SutTypes => {
 const simulateValidSubmit = (sut: RenderResult, email = faker.internet.email(), password = faker.internet.password()): void => {
   Helper.populateField(sut, 'email', email)
   Helper.populateField(sut, 'password', password)
-  const submitButton = sut.getByTestId('submit')
-  fireEvent.click(submitButton)
+  const form = sut.getByTestId('form')
+  fireEvent.submit(form)
 }
 
 const testElementExists = (sut: RenderResult, fieldName: string): void => {
