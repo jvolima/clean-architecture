@@ -36,6 +36,11 @@ export function SignUp ({ validation, addAccount }: Props): JSX.Element {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
+
+    if (state.isLoading) {
+      return
+    }
+
     setState({
       ...state,
       isLoading: true
