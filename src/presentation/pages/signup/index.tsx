@@ -1,3 +1,4 @@
+import { AddAccount } from '@/domain/usecases'
 import { Footer, FormStatus, Input, LoginHeader } from '@/presentation/components'
 import { FormContext } from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
@@ -6,9 +7,10 @@ import styles from './styles.scss'
 
 type Props = {
   validation?: Validation
+  addAccount?: AddAccount
 }
 
-export function SignUp ({ validation }: Props): JSX.Element {
+export function SignUp ({ validation, addAccount }: Props): JSX.Element {
   const [state, setState] = useState({
     isLoading: false,
     name: '',
@@ -37,6 +39,13 @@ export function SignUp ({ validation }: Props): JSX.Element {
     setState({
       ...state,
       isLoading: true
+    })
+
+    await addAccount.add({
+      name: state.name,
+      email: state.email,
+      password: state.password,
+      passwordConfirmation: state.passwordConfirmation
     })
   }
 
