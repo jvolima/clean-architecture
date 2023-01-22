@@ -42,11 +42,6 @@ const simulateValidSubmit = (sut: RenderResult, email = faker.internet.email(), 
   fireEvent.submit(form)
 }
 
-const testElementExists = (sut: RenderResult, fieldName: string): void => {
-  const element = sut.getByTestId(fieldName)
-  expect(element).toBeTruthy()
-}
-
 const testElementText = (sut: RenderResult, fieldName: string, text: string): void => {
   const element = sut.getByTestId(fieldName)
   expect(element.textContent).toBe(text)
@@ -100,7 +95,7 @@ describe('Login component', () => {
   it('Should show spinner on submit', () => {
     const { sut } = makeSut()
     simulateValidSubmit(sut)
-    testElementExists(sut, 'spinner')
+    Helper.testElementExists(sut, 'spinner')
   })
 
   it('Should be able to call Authentication with correct values', () => {
