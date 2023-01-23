@@ -3,7 +3,7 @@ import { Footer, FormStatus, Input, LoginHeader } from '@/presentation/component
 import { FormContext } from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import styles from './styles.scss'
 
 type Props = {
@@ -80,7 +80,7 @@ export function SignUp ({ validation, addAccount, saveAccessToken }: Props): JSX
           <Input type="password" name="password" placeholder="Digite sua senha" />
           <Input type="password" name="passwordConfirmation" placeholder="Repita sua senha" />
           <button data-testid="submit" type="submit" disabled={!!state.nameError || !!state.emailError || !!state.passwordError || !!state.passwordConfirmationError} className={styles.submit}>Entrar</button>
-          <span className={styles.link}>Voltar Para Login</span>
+          <Link to="/login" data-testid="login-link" replace className={styles.link}>Voltar Para Login</Link>
           <FormStatus />
         </form>
       </FormContext.Provider>
