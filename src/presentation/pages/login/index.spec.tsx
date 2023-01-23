@@ -5,7 +5,7 @@ import { Login } from '@/presentation/pages'
 import { ValidationStub, AuthenticationSpy, SaveAccessTokenMock, Helper } from '@/presentation/test'
 import { InvalidCredentialsError } from '@/domain/errors'
 import { createMemoryHistory } from 'history'
-import { Router } from 'react-router'
+import { Router } from 'react-router-dom'
 
 type SutTypes = {
   sut: RenderResult
