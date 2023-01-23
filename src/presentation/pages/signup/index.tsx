@@ -37,21 +37,29 @@ export function SignUp ({ validation, addAccount }: Props): JSX.Element {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
 
-    if (state.isLoading || state.nameError || state.emailError || state.passwordError || state.passwordConfirmationError) {
-      return
+    try {
+      if (state.isLoading || state.nameError || state.emailError || state.passwordError || state.passwordConfirmationError) {
+        return
+      }
+
+      setState({
+        ...state,
+        isLoading: true
+      })
+
+      await addAccount.add({
+        name: state.name,
+        email: state.email,
+        password: state.password,
+        passwordConfirmation: state.passwordConfirmation
+      })
+    } catch (error) {
+      setState({
+        ...state,
+        isLoading: false,
+        mainError: error.message
+      })
     }
-
-    setState({
-      ...state,
-      isLoading: true
-    })
-
-    await addAccount.add({
-      name: state.name,
-      email: state.email,
-      password: state.password,
-      passwordConfirmation: state.passwordConfirmation
-    })
   }
 
   return (
