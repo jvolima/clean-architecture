@@ -37,4 +37,10 @@ button {
     opacity: 0.9;
     cursor: pointer;
   }
+
+  &:disabled {
+    background-color: $disabledBackground;
+    color: $disabledColor;
+    cursor: not-allowed;
+  }
 }
