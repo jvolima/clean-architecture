@@ -189,4 +189,11 @@ describe('SignUp Component', () => {
       Helper.testChildCount(sut, 'form-status', 1)
     })
   })
+
+  it('Should be able to go to login page', () => {
+    const { sut } = makeSut()
+    const loginLink = sut.getByTestId('login-link')
+    fireEvent.click(loginLink)
+    expect(history.location.pathname).toBe('/login')
+  })
 })
