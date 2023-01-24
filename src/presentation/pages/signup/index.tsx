@@ -29,10 +29,18 @@ export function SignUp ({ validation, addAccount, saveAccessToken }: Props): JSX
   })
 
   useEffect(() => {
-    const nameError = validation.validate('name', state.name)
-    const emailError = validation.validate('email', state.email)
-    const passwordError = validation.validate('password', state.password)
-    const passwordConfirmationError = validation.validate('passwordConfirmation', state.passwordConfirmation)
+    const { name, email, password, passwordConfirmation } = state
+    const formData = {
+      name,
+      email,
+      password,
+      passwordConfirmation
+    }
+
+    const nameError = validation.validate('name', formData)
+    const emailError = validation.validate('email', formData)
+    const passwordError = validation.validate('password', formData)
+    const passwordConfirmationError = validation.validate('passwordConfirmation', formData)
 
     setState({
       ...state,
