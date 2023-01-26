@@ -86,11 +86,13 @@
 - Coveralls para deixar o test coverage do projeto na internet
 - Travis CI para verificação de qualidade
 - Husky para rodar scripts pre commit e pre push
+- Teste de integração com o Cypress
 
 ## Tecnologias utilizadas
 - React
 - Typescript
 - Jest
+- Cypress
 - Travis CI
 - Eslint
 - Coveralls
