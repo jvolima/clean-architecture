@@ -57,4 +57,12 @@ describe('Login', () => {
       .getByTestId('main-error').should('contain.text', 'Credenciais inválidas')
     cy.url().should('eq', `${baseUrl}/login`)
   })
+
+  it('Should be able to save accessToken if valid credentials are provided', () => {
+    cy.getByTestId('email').focus().type('teste@gmail.com')
+    cy.getByTestId('password').focus().type('12345')
+    cy.getByTestId('submit').click()
+    cy.url().should('eq', `${baseUrl}/`)
+    cy.window().then(window => assert.isOk(window.localStorage.getItem('accessToken')))
+  })
 })
