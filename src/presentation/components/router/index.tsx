@@ -1,5 +1,4 @@
 import React from 'react'
-import { Error } from '@/presentation/pages'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 type Factory = {
@@ -13,7 +12,6 @@ export function Router (factory: Factory): JSX.Element {
       <Routes>
         <Route path="/login" element={factory.makeLogin} />
         <Route path="/signup" element={factory.makeSignUp} />
-        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   )
