@@ -20,11 +20,20 @@ describe('Input Component', () => {
     expect(input.readOnly).toBe(true)
   })
 
-  it('Should remove readOnly on focus', () => {
+  it('Should be able to remove readOnly on focus', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
     const input = sut.getByTestId(field) as HTMLInputElement
     fireEvent.focus(input)
     expect(input.readOnly).toBe(false)
+  })
+
+  it('Shoud be able to focus input on label click', () => {
+    const field = faker.database.column()
+    const sut = makeSut(field)
+    const input = sut.getByTestId(field)
+    const label = sut.getByTestId(`${field}-label`) as HTMLLabelElement
+    fireEvent.click(label)
+    expect(document.activeElement).toBe(input)
   })
 })
