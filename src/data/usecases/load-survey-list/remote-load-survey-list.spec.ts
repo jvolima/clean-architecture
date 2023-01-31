@@ -67,4 +67,13 @@ describe('RemoteLoadSurveyList', () => {
     const surveys = await sut.loadAll()
     expect(surveys).toEqual(httpResult)
   })
+
+  it('Should be able to return an empty list if HttpGetClient returns 204', async () => {
+    const { sut, httpGetClientSpy } = makeSut()
+    httpGetClientSpy.response = {
+      statusCode: HttpStatusCode.noContent
+    }
+    const surveys = await sut.loadAll()
+    expect(surveys).toEqual([])
+  })
 })
