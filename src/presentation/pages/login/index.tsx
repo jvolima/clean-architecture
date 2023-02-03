@@ -72,7 +72,7 @@ export function Login ({ validation, authentication, saveAccessToken }: Props): 
   }
 
   return (
-    <div className={styles.login}>
+    <div className={styles.loginWrap}>
       <LoginHeader />
       <FormContext.Provider value={{ state, setState }}>
         <form data-testid="form" className={styles.form} onSubmit={handleSubmit}>

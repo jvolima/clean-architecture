@@ -85,7 +85,7 @@ export function SignUp ({ validation, addAccount, saveAccessToken }: Props): JSX
   }
 
   return (
-    <div className={styles.signup}>
+    <div className={styles.signupWrap}>
       <LoginHeader />
       <FormContext.Provider value={{ state, setState }}>
         <form data-testid="form" className={styles.form} onSubmit={handleSubmit}>
