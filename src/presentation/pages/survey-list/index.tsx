@@ -21,6 +21,30 @@ export function SurveyList (): JSX.Element {
             </div>
             <footer>Ver Resultado</footer>
           </li>
+          <li>
+            <div className={styles.surveyContent}>
+              <Icon iconName={IconName.thumbDown} className={styles.iconWrap} />
+              <time>
+                <span className={styles.day}>03</span>
+                <span className={styles.month}>02</span>
+                <span className={styles.year}>2023</span>
+              </time>
+              <p>Qual é seu framework web favorito?</p>
+            </div>
+            <footer>Ver Resultado</footer>
+          </li>
+          <li>
+            <div className={styles.surveyContent}>
+              <Icon iconName={IconName.thumbDown} className={styles.iconWrap} />
+              <time>
+                <span className={styles.day}>03</span>
+                <span className={styles.month}>02</span>
+                <span className={styles.year}>2023</span>
+              </time>
+              <p>Qual é seu framework web favorito?</p>
+            </div>
+            <footer>Ver Resultado</footer>
+          </li>
         </ul>
       </div>
       <Footer />

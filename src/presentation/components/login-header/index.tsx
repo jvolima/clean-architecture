@@ -4,7 +4,7 @@ import styles from './styles.scss'
 
 function LoginHeaderComponent (): JSX.Element {
   return (
-    <header className={styles.header}>
+    <header className={styles.headerWrap}>
       <Logo />
       <h1>4Dev - Enquetes para Programadores</h1>
     </header>

@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    width: 100%;
     max-width: 800px;
+    width: 100%;
     flex-grow: 1;
     padding: 40px;
 
@@ -29,16 +29,16 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 24px;
 
       li {
-        height: 250px;
+        min-height: 250px;
         background-color: $white;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         border-radius: 8px;
         flex-basis: 48%;
+        margin-bottom: 24px;
         box-shadow: 0px 1px 3px -1px $black;
 
         .surveyContent {
@@ -52,7 +52,7 @@
             linear-gradient(to right, rgba($primaryLight, 0.1), rgba($primaryLight, 0.1)),
             linear-gradient(to right, $white, $white)
           ;
-          background-position: 0 0, 504 0;
+          background-position: 0 0, 54 0;
           background-size: 54px 100%, 100% 100%;
           position: relative;
 
@@ -95,6 +95,7 @@
             font-size: 18px;
             margin: 24px;
             align-self: center;
+            flex-grow: 1;
           }
         }
 
@@ -110,6 +111,20 @@
           &:hover {
             background-color: $primaryDark;
           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .surveyListWrap {
+    .contentWrap {
+      ul {
+        flex-direction: column;
+  
+        li {
+          flex-basis: 100%;
         }
       }
     }
