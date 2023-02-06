@@ -1,4 +1,4 @@
-import { Authentication, SaveAccessToken } from '@/domain/usecases'
+import { Authentication, UpdateCurrentAccount } from '@/domain/usecases'
 import { Footer, FormStatus, Input, LoginHeader, SubmitButton } from '@/presentation/components'
 import { FormContext } from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
@@ -9,10 +9,10 @@ import styles from './styles.scss'
 type Props = {
   validation: Validation
   authentication: Authentication
-  saveAccessToken: SaveAccessToken
+  updateCurrentAccount: UpdateCurrentAccount
 }
 
-export function Login ({ validation, authentication, saveAccessToken }: Props): JSX.Element {
+export function Login ({ validation, authentication, updateCurrentAccount }: Props): JSX.Element {
   const navigation = useNavigate()
   const [state, setState] = useState({
     isLoading: false,
@@ -59,7 +59,7 @@ export function Login ({ validation, authentication, saveAccessToken }: Props): 
         password: state.password
       })
 
-      await saveAccessToken.save(account.accessToken)
+      await updateCurrentAccount.save(account)
 
       navigation('/')
     } catch (error) {
