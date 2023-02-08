@@ -22,6 +22,7 @@
 - Builder
 - Dependency Injection
 - Composition Root
+- Proxy
 
 ## Metodologias e Designs
 - TDD
@@ -63,9 +64,11 @@
 - UseState
 - UseContext
 - UseEffect
+- UseHistory
 - UseRef
 - Custom Hooks
 - Router
+- Memo
 
 ## Features do Git
 - Branch
