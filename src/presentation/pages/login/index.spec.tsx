@@ -27,7 +27,7 @@ const makeSut = (params?: SutParams): SutTypes => {
   validationStub.errorMessage = params?.validationError
   const sut = render(
     <ApiContext.Provider value={{ setCurrentAccount: setCurrentAccountMock }}>
-      <Router navigator={history} location={history.location}>
+      <Router history={history}>
         <Login validation={validationStub} authentication={authenticationSpy} />
       </Router>
     </ApiContext.Provider>
@@ -91,26 +91,31 @@ describe('Login component', () => {
     Helper.testButtonIsDisabled(sut, 'submit', false)
   })
 
-  it('Should show spinner on submit', () => {
+  it('Should show spinner on submit', async () => {
     const { sut } = makeSut()
     simulateValidSubmit(sut)
-    Helper.testElementExists(sut, 'spinner')
+    await waitFor(() => {
+      Helper.testElementExists(sut, 'spinner')
+    })
   })
 
-  it('Should be able to call Authentication with correct values', () => {
+  it('Should be able to call Authentication with correct values', async () => {
     const { sut, authenticationSpy } = makeSut()
     const email = faker.internet.email()
     const password = faker.internet.password()
     simulateValidSubmit(sut, email, password)
-
-    expect(authenticationSpy.params).toEqual({ email, password })
+    await waitFor(() => {
+      expect(authenticationSpy.params).toEqual({ email, password })
+    })
   })
 
-  it('Should be able to call Authentication only once', () => {
+  it('Should be able to call Authentication only once', async () => {
     const { sut, authenticationSpy } = makeSut()
     simulateValidSubmit(sut)
     simulateValidSubmit(sut)
-    expect(authenticationSpy.callsCount).toBe(1)
+    await waitFor(() => {
+      expect(authenticationSpy.callsCount).toBe(1)
+    })
   })
 
   it('Should not be able to call Authentication if form is invalid', () => {
@@ -140,10 +145,12 @@ describe('Login component', () => {
     })
   })
 
-  it('Should be able to go to signup page', () => {
+  it('Should be able to go to signup page', async () => {
     const { sut } = makeSut()
     const signupLink = sut.getByTestId('signup-link')
     fireEvent.click(signupLink)
-    expect(history.location.pathname).toBe('/signup')
+    await waitFor(() => {
+      expect(history.location.pathname).toBe('/signup')
+    })
   })
 })

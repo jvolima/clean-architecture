@@ -3,7 +3,7 @@ import { Footer, FormStatus, Input, LoginHeader, SubmitButton } from '@/presenta
 import { FormContext, ApiContext } from '@/presentation/contexts'
 import { Validation } from '@/presentation/protocols/validation'
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import styles from './styles.scss'
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 
 export function Login ({ validation, authentication }: Props): JSX.Element {
   const { setCurrentAccount } = useContext(ApiContext)
-  const navigation = useNavigate()
+  const history = useHistory()
   const [state, setState] = useState({
     isLoading: false,
     isFormInvalid: true,
@@ -60,7 +60,7 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
       })
 
       setCurrentAccount(account)
-      navigation('/')
+      history.replace('/')
     } catch (error) {
       setState({
         ...state,
