@@ -30,6 +30,7 @@ export function SurveyList ({ loadSurveyList }: Props): JSX.Element {
           ? (
             <div>
               <span data-testid="error">{state.error}</span>
+              <button>Recarregar</button>
             </div>
             )
           : (
