@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Footer, Header } from '@/presentation/components'
 import styles from './styles.scss'
-import { SurveyItem, SurveyItemEmpty } from './components'
+import { Footer, Header } from '@/presentation/components'
 import { LoadSurveyList } from '@/domain/usecases'
 import { SurveyModel } from '@/domain/models'
+import { SurveyContext } from './contexts/context'
+import { SurveyListItem, SurveyError } from './components'
 
 type Props = {
   loadSurveyList?: LoadSurveyList
@@ -26,22 +27,9 @@ export function SurveyList ({ loadSurveyList }: Props): JSX.Element {
       <Header />
       <div className={styles.contentWrap}>
         <h2>Enquetes</h2>
-        {state.error
-          ? (
-            <div>
-              <span data-testid="error">{state.error}</span>
-              <button>Recarregar</button>
-            </div>
-            )
-          : (
-            <ul data-testid="survey-list">
-            {state.surveys.length
-              ? state.surveys.map(survey => <SurveyItem key={survey.id} survey={survey} />)
-              : <SurveyItemEmpty />
-            }
-            </ul>
-            )
-        }
+        <SurveyContext.Provider value={{ state, setState }}>
+          {state.error ? <SurveyError /> : <SurveyListItem />}
+        </SurveyContext.Provider>
       </div>
       <Footer />
     </div>
