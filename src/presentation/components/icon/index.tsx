@@ -16,7 +16,7 @@ export function Icon ({ iconName, className }: Props): JSX.Element {
 
   return (
     <div className={[styles.iconWrap, iconColor, className].join(' ')}>
-      <img className={styles.icon} src={iconName} />
+      <img data-testid="icon" className={styles.icon} src={iconName} />
     </div>
   )
 }
