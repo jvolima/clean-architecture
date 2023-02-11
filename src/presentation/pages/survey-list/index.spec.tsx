@@ -1,20 +1,8 @@
 import React from 'react'
-import { render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { SurveyList } from '.'
-import { LoadSurveyList } from '@/domain/usecases'
-import { SurveyModel } from '@/domain/models'
-import { mockSurveyListModel } from '@/domain/test'
 import { UnexpectedError } from '@/domain/errors'
-
-class LoadSurveyListSpy implements LoadSurveyList {
-  callsCount = 0
-  surveys = mockSurveyListModel()
-
-  async loadAll (): Promise<SurveyModel[]> {
-    this.callsCount++
-    return this.surveys
-  }
-}
+import { LoadSurveyListSpy } from '@/presentation/test'
 
 type SutTypes = {
   loadSurveyListSpy: LoadSurveyListSpy
@@ -59,6 +47,16 @@ describe('SurveyListComponent', () => {
     await waitFor(() => {
       expect(screen.queryByTestId('survey-list')).not.toBeInTheDocument()
       expect(screen.getByTestId('error')).toHaveTextContent(error.message)
+    })
+  })
+
+  it('Should be able to call LoadSurveyList on reload', async () => {
+    const loadSurveyListSpy = new LoadSurveyListSpy()
+    jest.spyOn(loadSurveyListSpy, 'loadAll').mockRejectedValueOnce(new UnexpectedError())
+    makeSut(loadSurveyListSpy)
+    await waitFor(() => {
+      fireEvent.click(screen.getByTestId('reload'))
+      expect(loadSurveyListSpy.callsCount).toBe(1)
     })
   })
 })
