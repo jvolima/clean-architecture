@@ -7,7 +7,7 @@ import { SurveyContext } from './contexts/context'
 import { SurveyListItem, SurveyError } from './components'
 
 type Props = {
-  loadSurveyList?: LoadSurveyList
+  loadSurveyList: LoadSurveyList
 }
 
 export function SurveyList ({ loadSurveyList }: Props): JSX.Element {
