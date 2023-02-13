@@ -25,6 +25,9 @@
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/return-await": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-declare": "off",
+    "import/export": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/prop-types": "off"

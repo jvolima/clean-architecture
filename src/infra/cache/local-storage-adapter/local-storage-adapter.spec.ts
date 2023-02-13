@@ -15,8 +15,7 @@ describe('LocalStorageAdapter', () => {
     const sut = makeSut()
     const key = faker.database.column()
     const value = {
-      name: faker.name.fullName(),
-      accessToken: faker.datatype.uuid()
+      random: faker.random.word()
     }
     sut.set(key, value)
     expect(localStorage.setItem).toHaveBeenCalledWith(key, JSON.stringify(value))
@@ -26,8 +25,7 @@ describe('LocalStorageAdapter', () => {
     const sut = makeSut()
     const key = faker.database.column()
     const value = {
-      name: faker.name.fullName(),
-      accessToken: faker.datatype.uuid()
+      random: faker.random.word()
     }
     const getItemSpy = jest.spyOn(localStorage, 'getItem').mockReturnValueOnce(JSON.stringify(value))
     const obj = sut.get(key)
