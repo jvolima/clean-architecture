@@ -1,15 +1,20 @@
 import { Footer, Header } from '@/presentation/components'
 import { LoadSurveyList } from '@/domain/usecases'
+import { AccessDeniedError } from '@/domain/errors'
 import { SurveyContext } from './contexts/context'
+import { ApiContext } from '@/presentation/contexts'
 import { SurveyListItem, SurveyError } from './components'
 import styles from './styles.scss'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 type Props = {
   loadSurveyList: LoadSurveyList
 }
 
 export function SurveyList ({ loadSurveyList }: Props): JSX.Element {
+  const history = useHistory()
+  const { setCurrentAccount } = useContext(ApiContext)
   const [state, setState] = useState({
     surveys: [] as LoadSurveyList.Model[],
     error: '',
@@ -19,7 +24,14 @@ export function SurveyList ({ loadSurveyList }: Props): JSX.Element {
   useEffect(() => {
     loadSurveyList.loadAll()
       .then(surveys => { setState({ ...state, surveys }) })
-      .catch(error => { setState({ ...state, error: error.message }) })
+      .catch(error => {
+        if (error instanceof AccessDeniedError) {
+          setCurrentAccount(undefined)
+          history.replace('/login')
+        } else {
+          setState({ ...state, error: error.message })
+        }
+      })
   }, [state.reload])
 
   return (
