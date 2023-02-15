@@ -1,9 +1,9 @@
 import { mockSurveyModel } from '@/domain/test'
 import { LoadSurveyList } from '@/domain/usecases'
 import { IconName } from '@/presentation/components'
+import { SurveyItem } from '.'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
-import { SurveyItem } from '.'
 
 const makeSut = (survey: LoadSurveyList.Model): void => {
   render(<SurveyItem survey={survey} />)

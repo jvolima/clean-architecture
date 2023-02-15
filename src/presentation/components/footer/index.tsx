@@ -1,5 +1,5 @@
-import React, { memo } from 'react'
 import styles from './styles.scss'
+import React, { memo } from 'react'
 
 function FooterComponent (): JSX.Element {
   return (

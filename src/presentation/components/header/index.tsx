@@ -1,8 +1,8 @@
-import React, { memo, useContext } from 'react'
-import { useHistory } from 'react-router-dom'
-import styles from './styles.scss'
 import { Logo } from '../logo'
 import { ApiContext } from '@/presentation/contexts'
+import styles from './styles.scss'
+import React, { memo, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 
 function HeaderComponent (): JSX.Element {
   const history = useHistory()

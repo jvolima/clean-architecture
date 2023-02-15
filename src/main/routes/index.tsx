@@ -1,9 +1,9 @@
-import React from 'react'
-import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import { ApiContext } from '@/presentation/contexts'
 import { getCurrentAccountAdapter, setCurrentAccountAdapter } from '@/main/adapters/current-account-adapter'
 import { PrivateRoute } from '@/presentation/components'
 import { makeLogin, makeSignUp, makeSurveyList } from '../factories/pages'
+import React from 'react'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
 export function Router (): JSX.Element {
   return (

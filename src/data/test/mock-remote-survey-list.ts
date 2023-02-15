@@ -1,5 +1,5 @@
-import { faker } from '@faker-js/faker'
 import { RemoteLoadSurveyList } from '@/data/usecases/load-survey-list/remote-load-survey-list'
+import { faker } from '@faker-js/faker'
 
 export const mockRemoteSurveyModel = (): RemoteLoadSurveyList.Model => ({
   id: faker.datatype.uuid(),

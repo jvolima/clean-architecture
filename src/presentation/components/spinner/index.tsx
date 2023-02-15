@@ -1,5 +1,5 @@
-import React from 'react'
 import styles from './styles.scss'
+import React from 'react'
 
 type Props = React.HTMLAttributes<HTMLElement>
 

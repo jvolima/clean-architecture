@@ -1,9 +1,9 @@
-import { faker } from '@faker-js/faker'
-import { HttpPostClientSpy } from '@/data/test'
 import { RemoteAddAccount } from './remote-add-account'
+import { HttpPostClientSpy } from '@/data/test'
 import { mockAddAccountParams, mockAddAccountModel } from '@/domain/test'
 import { HttpStatusCode } from '@/data/protocols/http'
 import { EmailInUseError, UnexpectedError } from '@/domain/errors'
+import { faker } from '@faker-js/faker'
 
 type SutTypes = {
   sut: RemoteAddAccount

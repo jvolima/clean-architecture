@@ -1,6 +1,6 @@
 import { InvalidFieldError } from '@/validation/errors'
-import { faker } from '@faker-js/faker'
 import { EmailValidation } from './email-validation'
+import { faker } from '@faker-js/faker'
 
 type SutTypes = {
   sut: EmailValidation

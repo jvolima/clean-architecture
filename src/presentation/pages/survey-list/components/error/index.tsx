@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import styles from './styles.scss'
 import { SurveyContext } from '@/presentation/pages/survey-list/contexts/context'
+import styles from './styles.scss'
+import React, { useContext } from 'react'
 
 export function SurveyError (): JSX.Element {
   const { state, setState } = useContext(SurveyContext)

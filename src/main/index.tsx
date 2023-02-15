@@ -1,7 +1,7 @@
+import '@/presentation/styles/global.scss'
+import { Router } from '@/main/routes'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router } from '@/main/routes'
-import '@/presentation/styles/global.scss'
 
 ReactDOM.render(
   <Router />,

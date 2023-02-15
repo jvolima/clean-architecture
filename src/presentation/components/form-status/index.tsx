@@ -1,7 +1,7 @@
-import { FormContext } from '@/presentation/contexts/form/form-context'
-import React, { useContext } from 'react'
+import { FormContext } from '@/presentation/contexts'
 import { Spinner } from '../spinner'
 import styles from './styles.scss'
+import React, { useContext } from 'react'
 
 export function FormStatus (): JSX.Element {
   const { state: { isLoading, mainError } } = useContext(FormContext)

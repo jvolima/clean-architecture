@@ -1,11 +1,11 @@
-import React from 'react'
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { SurveyList } from '.'
 import { UnexpectedError } from '@/domain/errors'
 import { LoadSurveyListSpy, mockAccountModel } from '@/domain/test'
 import { ApiContext } from '@/presentation/contexts'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
+import React from 'react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 
 type SutTypes = {
   loadSurveyListSpy: LoadSurveyListSpy

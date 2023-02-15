@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import styles from './styles.scss'
 import { Footer, Header } from '@/presentation/components'
 import { LoadSurveyList } from '@/domain/usecases'
 import { SurveyContext } from './contexts/context'
 import { SurveyListItem, SurveyError } from './components'
+import styles from './styles.scss'
+import React, { useEffect, useState } from 'react'
 
 type Props = {
   loadSurveyList: LoadSurveyList

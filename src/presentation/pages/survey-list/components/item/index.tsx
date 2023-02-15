@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './styles.scss'
 import { Icon, IconName } from '@/presentation/components'
 import { LoadSurveyList } from '@/domain/usecases'
+import styles from './styles.scss'
+import React from 'react'
 
 type Props = {
   survey: LoadSurveyList.Model

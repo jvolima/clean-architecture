@@ -3,9 +3,9 @@ import { Footer, FormStatus, Input, LoginHeader, SubmitButton } from '@/presenta
 import { ApiContext } from '@/presentation/contexts'
 import { FormContext } from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
+import styles from './styles.scss'
 import React, { useContext, useEffect, useState } from 'react'
 import { Link , useHistory } from 'react-router-dom'
-import styles from './styles.scss'
 
 type Props = {
   validation: Validation

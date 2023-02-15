@@ -1,7 +1,7 @@
 import { EmailValidation, MinLengthValidation, RequiredFieldValidation } from '@/validation/validators'
-import { faker } from '@faker-js/faker'
 import { CompareFieldsValidation } from '../compare-fields/compare-fields-validation'
 import { ValidationBuilder as sut } from './validation-builder'
+import { faker } from '@faker-js/faker'
 
 describe('ValidationBuilder', () => {
   it('Should be able to return RequiredFieldValidation', () => {

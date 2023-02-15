@@ -1,6 +1,6 @@
 import { RequiredFieldError } from '@/validation/errors'
-import { faker } from '@faker-js/faker'
 import { RequiredFieldValidation } from './required-field-validation'
+import { faker } from '@faker-js/faker'
 
 type SutTypes = {
   sut: RequiredFieldValidation
