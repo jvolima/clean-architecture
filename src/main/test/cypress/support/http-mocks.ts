@@ -15,7 +15,7 @@ export const mockUnauthorizedError = (url: RegExp): void => {
 export const mockForbiddenError = (url: RegExp, method: string): void => {
   cy.server()
   cy.route({
-    method: 'POST',
+    method,
     url,
     status: 403,
     response: {
