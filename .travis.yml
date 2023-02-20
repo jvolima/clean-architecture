@@ -4,10 +4,8 @@ node_js:
 script:
   - eslint 'src/**'
   - npm run test:coveralls
-deploy:
-  provider: pages
+build:
+  provider: heroku
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN 
-  keep_history: true
-  on:
-    branch: main
+  app: forves-react
+  api_key: $HEROKU_API 

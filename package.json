@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "jest --passWithNoTests --no-cache --runInBand",
@@ -18,7 +16,6 @@
     "prepare": "husky install",
     "check": "npx npm-check -u -s"
   },
-  "homepage": "http://jvolima.github.io/clean-architecture-react",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -46,7 +43,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-standard": "^5.0.0",
-    "gh-pages": "^5.0.0",
     "history": "^5.3.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
