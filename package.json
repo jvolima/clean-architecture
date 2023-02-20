@@ -43,6 +43,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-standard": "^5.0.0",
+    "favicons-webpack-plugin": "^6.0.0",
     "history": "^5.3.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
