@@ -1,4 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/jvolima/clean-architecture/badge.svg?branch=master)](https://coveralls.io/github/jvolima/clean-architecture?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/jvolima/clean-architecture/badge.svg)](https://snyk.io/test/github/jvolima/clean-architecture)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
