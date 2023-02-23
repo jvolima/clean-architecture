@@ -1,5 +1,5 @@
 import styles from './styles.scss'
-import { Footer, Header, Loading } from '@/presentation/components'
+import { Calendar, Footer, Header, Loading } from '@/presentation/components'
 import FlipMove from 'react-flip-move'
 import React from 'react'
 
@@ -8,7 +8,10 @@ export function SurveyResult (): JSX.Element {
     <div className={styles.surveyResultWrap}>
       <Header />
       <div className={styles.contentWrap}>
-        <h2>Qual é seu framework web favorito?</h2>
+        <hgroup>
+          <Calendar date={new Date()} className={styles.calendarWrap} />
+          <h2>Qual é seu framework web favorito?</h2>
+        </hgroup>
         <FlipMove className={styles.answersList}>
           <li>
             <img src="https://logospng.org/download/react/logo-react-1024.png" />
