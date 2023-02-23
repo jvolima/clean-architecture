@@ -4,6 +4,7 @@ import { PrivateRoute } from '@/presentation/components'
 import { makeLogin, makeSignUp, makeSurveyList } from '../factories/pages'
 import React from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
+import { SurveyResult } from '@/presentation/pages'
 
 export function Router (): JSX.Element {
   return (
@@ -18,6 +19,7 @@ export function Router (): JSX.Element {
           <Route path="/login" exact component={makeLogin} />
           <Route path="/signup" exact component={makeSignUp} />
           <PrivateRoute path="/" exact component={makeSurveyList} />
+          <PrivateRoute path="/surveys" exact component={SurveyResult} />
         </Switch>
       </BrowserRouter>
     </ApiContext.Provider>
