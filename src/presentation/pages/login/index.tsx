@@ -41,10 +41,7 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
       if (state.isLoading || state.isFormInvalid) {
         return
       }
-      setState({
-        ...state,
-        isLoading: true
-      })
+      setState(old => ({ ...old, isLoading: true }))
 
       const account = await authentication.auth({
         email: state.email,
@@ -54,11 +51,11 @@ export function Login ({ validation, authentication }: Props): JSX.Element {
       setCurrentAccount(account)
       history.replace('/')
     } catch (error) {
-      setState({
-        ...state,
+      setState(old => ({
+        ...old,
         isLoading: false,
         mainError: error.message
-      })
+      }))
     }
   }
 

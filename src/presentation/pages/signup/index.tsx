@@ -49,10 +49,7 @@ export function SignUp ({ validation, addAccount }: Props): JSX.Element {
         return
       }
 
-      setState({
-        ...state,
-        isLoading: true
-      })
+      setState(old => ({ ...old, isLoading: true }))
 
       const account = await addAccount.add({
         name: state.name,
@@ -65,11 +62,11 @@ export function SignUp ({ validation, addAccount }: Props): JSX.Element {
 
       history.replace('/')
     } catch (error) {
-      setState({
-        ...state,
+      setState(old => ({
+        ...old,
         isLoading: false,
         mainError: error.message
-      })
+      }))
     }
   }
 
