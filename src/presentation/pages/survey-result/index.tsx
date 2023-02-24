@@ -30,7 +30,7 @@ export function SurveyResult (): JSX.Element {
           </li>
         </FlipMove>
         <button>Voltar</button>
-        { false && <Loading /> }
+        { true && <Loading /> }
       </div>
       <Footer />
     </div>
