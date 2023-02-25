@@ -8,7 +8,7 @@ export function SurveyResult (): JSX.Element {
     <div className={styles.surveyResultWrap}>
       <Header />
       <div className={styles.contentWrap}>
-        { false && (
+        { true && (
         <>
           <hgroup>
             <Calendar date={new Date()} className={styles.calendarWrap} />
