@@ -29,7 +29,7 @@ const makeSut = (loadSurveyListSpy = new LoadSurveyListSpy()): SutTypes => {
   }
 }
 
-describe('SurveyListComponent', () => {
+describe('SurveyList Component', () => {
   it('Should be able to present 4 empty items on start', async () => {
     makeSut()
     const surveyList = screen.getByTestId('survey-list')
