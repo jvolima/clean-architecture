@@ -2,14 +2,24 @@ import styles from './styles.scss'
 import { Calendar, Error, Footer, Header, Loading } from '@/presentation/components'
 import { LoadSurveyResult } from '@/domain/usecases'
 import FlipMove from 'react-flip-move'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-export function SurveyResult (): JSX.Element {
+type Props = {
+  loadSurveyResult: LoadSurveyResult
+}
+
+export function SurveyResult ({ loadSurveyResult }: Props): JSX.Element {
   const [state] = useState({
     isLoading: false,
     error: '',
     surveyResult: null as LoadSurveyResult.Model
   })
+
+  useEffect(() => {
+    loadSurveyResult.load()
+      .then()
+      .catch()
+  }, [])
 
   return (
     <div className={styles.surveyResultWrap}>
