@@ -1,14 +1,9 @@
 import styles from './styles.scss'
+import { SurveyResultAnswerModel } from '@/domain/models'
 import React from 'react'
 
 type Props = {
-  answer: {
-    image?: string
-    answer: string
-    count: number
-    percent: number
-    isCurrentAccountAnswer: boolean
-  }
+  answer: SurveyResultAnswerModel
 }
 
 export function SurveyResultAnswer ({ answer }: Props): JSX.Element {
