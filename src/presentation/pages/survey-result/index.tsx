@@ -12,7 +12,7 @@ type Props = {
 
 export function SurveyResult ({ loadSurveyResult, saveSurveyResult }: Props): JSX.Element {
   const handleError = useErrorHandler((error: Error) => {
-    setState(old => ({ ...old, surveyResult: null, error: error.message }))
+    setState(old => ({ ...old, surveyResult: null, error: error.message, isLoading: false }))
   })
   const [state, setState] = useState({
     isLoading: false,
@@ -25,7 +25,7 @@ export function SurveyResult ({ loadSurveyResult, saveSurveyResult }: Props): JS
     setState(old => ({ ...old, isLoading: true }))
     saveSurveyResult.save({ answer })
       .then()
-      .catch()
+      .catch(handleError)
   }
 
   const reload = (): void => {
