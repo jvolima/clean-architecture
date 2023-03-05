@@ -24,7 +24,7 @@ export function SurveyResult ({ loadSurveyResult, saveSurveyResult }: Props): JS
   const onAnswer = (answer: string): void => {
     setState(old => ({ ...old, isLoading: true }))
     saveSurveyResult.save({ answer })
-      .then()
+      .then(surveyResult => { setState(old => ({ ...old, isLoading: false, surveyResult })) })
       .catch(handleError)
   }
 
