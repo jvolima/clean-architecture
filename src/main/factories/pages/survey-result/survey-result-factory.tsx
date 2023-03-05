@@ -1,5 +1,5 @@
 import { SurveyResult } from '@/presentation/pages'
-import { makeRemoteLoadSurveyResult } from '@/main/factories/usecases'
+import { makeRemoteLoadSurveyResult, makeRemoteSaveSurveyResult } from '@/main/factories/usecases'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -9,6 +9,7 @@ export function makeSurveyResult (): JSX.Element {
   return (
     <SurveyResult
       loadSurveyResult={makeRemoteLoadSurveyResult(id)}
+      saveSurveyResult={makeRemoteSaveSurveyResult(id)}
     />
   )
 }
