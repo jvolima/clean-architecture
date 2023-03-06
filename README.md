@@ -6,23 +6,26 @@
 # Fordevs - Aplicação construída no curso do Rodrigo Manguinho de Clean Architecture e TDD no React 
 
 ## Princípios
+- Single Responsibility Principle (SRP)
 - Open Closed Principle (OCP)
 - Liskov Substitution Principle (LSP)
 - Interface Segregation Principle (ISP)
 - Dependency Inversion Principle (DIP)
+- Separation of Concerns (SOC)
 - Don't Repeat Yourself (DRY)
 - You Aren't Gonna Need It (YAGNI)
 - Keep It Simple, Silly (KISS)
-- Small Commits
 - Composition Over Inheritance
+- Small Commits
 
 ## Design Patterns
 - Factory
 - Adapter
 - Composite
-- Builder
+- Decorator
 - Dependency Injection
 - Composition Root
+- Builder
 - Proxy
 
 ## Metodologias e Designs
@@ -43,6 +46,7 @@
 ## Bibliotecas e Ferramentas
 - Typescript
 - React
+- Recoil
 - React Testing Library
 - React Router DOM
 - Cypress
@@ -59,6 +63,7 @@
 - Lint Staged
 - Eslint
 - Standard Javascript Style
+- React Flip Move
 
 ## Features do React
 - Functional Components
@@ -67,11 +72,19 @@
 - UseEffect
 - UseHistory
 - UseRef
+- UseParams
 - Custom Hooks
+- UseRecoilState
+- UseResetRecoilState
+- UseRecoilValue
+- UseRecoilSetState
+- Atom
 - Router
 - Memo
 
 ## Features do Git
+- Alias
+- Log Personalizado
 - Branch
 - Reset
 - Amend
