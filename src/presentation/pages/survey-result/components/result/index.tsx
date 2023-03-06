@@ -2,7 +2,6 @@ import styles from './styles.scss'
 import { Calendar } from '@/presentation/components'
 import { LoadSurveyResult } from '@/domain/usecases'
 import { SurveyResultAnswer } from '../answer'
-import FlipMove from 'react-flip-move'
 import { useHistory } from 'react-router-dom'
 import React from 'react'
 
@@ -19,11 +18,9 @@ export function SurveyResultData ({ surveyResult }: Props): JSX.Element {
         <Calendar date={surveyResult.date} className={styles.calendarWrap} />
         <h2 data-testid="question">{surveyResult.question}</h2>
       </hgroup>
-      <FlipMove data-testid="answers" className={styles.answersList}>
-        <>
-          {surveyResult.answers.map(answer => <SurveyResultAnswer key={answer.answer} answer={answer} />)}
-        </>
-      </FlipMove>
+      <ul data-testid="answers" className={styles.answersList}>
+        {surveyResult.answers.map(answer => <SurveyResultAnswer key={answer.answer} answer={answer} />)}
+      </ul>
       <button className={styles.button} data-testid="back-button" onClick={() => history.replace('/')}>Voltar</button>
     </>
   )
