@@ -207,4 +207,14 @@ describe('SurveyResult Component', () => {
       })
     })
   })
+
+  it('Should be able to prevent multiple answer click', async () => {
+    const { saveSurveyResultSpy } = makeSut()
+    await waitFor(() => {
+      const answersWrap = screen.queryAllByTestId('answer-wrap')
+      fireEvent.click(answersWrap[1])
+      fireEvent.click(answersWrap[1])
+      expect(saveSurveyResultSpy.callsCount).toBe(1)
+    })
+  })
 })
