@@ -46,7 +46,6 @@
 ## Bibliotecas e Ferramentas
 - Typescript
 - React
-- Recoil
 - React Testing Library
 - React Router DOM
 - Cypress
@@ -63,7 +62,6 @@
 - Lint Staged
 - Eslint
 - Standard Javascript Style
-- React Flip Move
 
 ## Features do React
 - Functional Components
@@ -74,11 +72,6 @@
 - UseRef
 - UseParams
 - Custom Hooks
-- UseRecoilState
-- UseResetRecoilState
-- UseRecoilValue
-- UseRecoilSetState
-- Atom
 - Router
 - Memo
 
